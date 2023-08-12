@@ -1,0 +1,33 @@
+.home-page {
+    background-image: url('https://cdn.thewirecutter.com/wp-content/media/2023/03/androidphones-2048px-2x1-1.jpg?auto=webp&quality=75&crop=2:1&width=980&dpr=2');
+    min-height: 750px;
+    background-position: center;
+}
+
+.home-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 750px;
+    justify-content: center;
+}
+
+.welcome-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    padding: 2em;
+    border-radius: 15px;
+}
+
+.welcome {
+    font-size: 84px;
+    color: beige;
+    padding-bottom: 0.5em;
+}
+
+.welcome-info{
+    color: #f89705;
+    font-size: 24px;
+}
