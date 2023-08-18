@@ -1,0 +1,27 @@
+<main *ngIf="phones.length !== 0" class="main-page">
+    <h2>Phone <span>Inventory</span></h2>
+    <p class="heading-par">Here you can find a variety of used phones</p>
+    <section class="cards">
+
+        <section class="section-1">
+            <div *ngFor="let phone of phones" class="card">
+                <img src={{phone.imageUrl}} alt="">
+                <h3>{{phone.make}} {{phone.model}}</h3>
+                <p>year: {{phone.year}}</p>
+                <p>condition: {{phone.condition}}</p>
+                <p>OS: {{phone.OS}}</p> 
+                <p>price: {{phone.price}}</p>
+                <a href="">READ MORE</a>
+            </div>
+
+        </section>
+
+
+    </section>
+</main>
+
+<main *ngIf="phones.length === 0" class="no-inventory">
+    <div class="no-inventory-container">
+        <p class="no-inventory-p">There are currently no phones available</p>
+    </div>
+</main>
