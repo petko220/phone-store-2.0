@@ -16,4 +16,13 @@ export class ApiService {
     const { appUrl } = environment;
     return this.http.get<Phone[]>(`${appUrl}/data/phones`);
   }
+
+  login(user: object) {
+    const { appUrl } = environment;
+
+    const headers = { 'content-type': 'application/json' };
+    console.log(user);
+    return this.http.post<any>(`${appUrl}/users/login`, user, { headers });
+    
+  }
 }
