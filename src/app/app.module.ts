@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { CurrentPhoneComponent } from './current-phone/current-phone.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RegisterComponent } from './register/register.component';
     AboutComponent,
     CatalogComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CurrentPhoneComponent
   ],
   imports: [
     BrowserModule,

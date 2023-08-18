@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../core/services/api.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { StateManagementService } from '../core/services/state-management.service';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,11 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginComponent {
 
-  public auth: any
 
   constructor(
     private apiService: ApiService,
     private router: Router,
-
+    private stateManager: StateManagementService,
   ) { }
 
   login(form: NgForm): void {
@@ -25,8 +25,8 @@ export class LoginComponent {
       return console.log('email or password missing')
     } else {
       this.apiService.login(value).subscribe(data => {
-        console.log(data);
-        this.auth = data;
+        this.stateManager.currentState = data;
+        this.stateManager.showState()
         //this.router.navigate(['/']);
       });
     }
