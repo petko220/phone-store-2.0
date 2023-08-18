@@ -17,6 +17,11 @@ export class ApiService {
     return this.http.get<Phone[]>(`${appUrl}/data/phones`);
   }
 
+  getOne(id: string) {
+    const { appUrl } = environment;
+    return this.http.get<any>(`${appUrl}/data/phones/${id}`);
+  }
+
   login(user: object) {
     const { appUrl } = environment;
 

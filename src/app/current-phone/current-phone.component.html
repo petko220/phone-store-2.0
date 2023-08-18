@@ -1,1 +1,17 @@
-<p>current-phone works!</p>
+<main>
+    <div *ngFor="let phone of phones" class="phone-details">
+        <img class="phone-picture" src="" alt="">
+        <div class="phone-description">
+            <h3>{{phone.make}} {{phone.model}}</h3>
+            <img src="{{phone.imageUrl}}" alt="">
+            <p>Year: {{phone.year}}</p>
+            <p>Condition: {{phone.condition}}</p>
+            <p>Operating system: {{phone.oS}}</p>
+            <p>price: {{phone.price}}</p>
+        </div>
+        <div class="button-holder">
+            <a class="orange-button" href="">Edit</a>
+            <a class="orange-button" href="">Delete</a>
+        </div>
+    </div>
+</main>
