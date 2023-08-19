@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StateManagementService } from '../services/state-management.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +9,17 @@ import { StateManagementService } from '../services/state-management.service';
 })
 export class HeaderComponent {
   constructor (
-    private stateManager: StateManagementService
+    private state: StateManagementService,
+    private router: Router
   ) {}
 
+  get isLoggedIn(): boolean{
+    return this.state.isLogged;
+  }
+
+  logout(): void {
+    this.state.logout();
+    this.router.navigate(['']);
+  }
   
 }
