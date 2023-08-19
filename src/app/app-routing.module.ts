@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, mapToCanActivate } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { CatalogComponent } from './catalog/catalog.component';
@@ -23,7 +23,7 @@ const routes: Routes = [
 
       {
         path: ':phoneId',
-        component: CurrentPhoneComponent
+        component: CurrentPhoneComponent,
       }
     ]
   },
@@ -31,12 +31,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    
+    canActivate: [AuthGuard]
   },
   {
     path: 'register',
     component: RegisterComponent,
-    
+    canActivate: [AuthGuard]
   }
   
 ];

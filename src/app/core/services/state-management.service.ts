@@ -11,6 +11,8 @@ export class StateManagementService {
   user: User | undefined;
 
   get isLogged(): boolean {
+    console.log(this.user);
+    
     return !!this.user;
   }
 
