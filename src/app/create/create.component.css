@@ -1,0 +1,60 @@
+main {
+    min-height: 750px;
+    background-image: url('https://cdn.thewirecutter.com/wp-content/media/2023/03/androidphones-2048px-2x1-1.jpg?auto=webp&quality=75&crop=2:1&width=980&dpr=2');
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-box {
+    background: rgba(0,0,0,0.8);
+    color: #f89705;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    gap: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-box {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.user-box input {
+    background-color: gray;
+    color: white;
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+button {
+    background-color: #f89705;
+    font-size: 24px;
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 1em;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+}
+
+span {
+    font-size: 18px;
+}
+
+span a {
+    color: white;
+}

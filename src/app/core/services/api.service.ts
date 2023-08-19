@@ -22,5 +22,22 @@ export class ApiService {
     return this.http.get<any>(`${appUrl}/data/phones/${id}`);
   }
 
+  create(phone: object) {
+    let authorization = String(localStorage.getItem('[user]'));
+    authorization = JSON.parse(authorization).accessToken;
+    
+    const { appUrl } = environment;
+    const headers = {
+     'content-type': 'application/json',
+     'X-Authorization': `${authorization}`
+    };
+
+    this.http.post<any>(`${appUrl}/data/phones`, phone, { headers }).subscribe(
+      data => {
+        console.log(data);
+        
+      }
+    )
+  }
 
 }

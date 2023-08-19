@@ -1,1 +1,37 @@
-<p>create works!</p>
+<main>
+    <div class="create-box">
+        <h2>Put you device for sale right now!</h2>
+        <form #form="ngForm" (ngSubmit)="create(form)">
+            <div class="user-box">
+                <label>Make</label>
+                <input ngModel type="text" name="make" required="true">
+            </div>
+            <div class="user-box">
+                <label>Model</label>
+                <input ngModel type="text" name="model" required>
+            </div>
+            <div class="user-box">
+                <label>Production year</label>
+                <input ngModel type="number" name="year" required>
+            </div>
+            <div class="user-box">
+                <label>Operating system</label>
+                <input ngModel type="text" name="OS" required>
+            </div>
+            <div class="user-box">
+                <label>Condition</label>
+                <input ngModel type="text" name="condition" required>
+            </div>
+            <div class="user-box">
+                <label>Price</label>
+                <input ngModel type="number" name="price" required>
+            </div>
+            <div class="user-box">
+                <label>Device Image</label>
+                <input ngModel type="url" name="imageUrl" required>
+            </div>
+            <button>Add your phone</button>
+        </form>
+    </div>
+</main>
+
