@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../core/services/api.service';
 import { Router } from '@angular/router';
+import { StateManagementService } from '../core/services/state-management.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -10,4 +10,35 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent {
 
+  constructor(
+    private state: StateManagementService,
+    private router: Router
+  ) { }
+
+  register(form: NgForm): void {
+    const value: { email: string, password: string, repassword: string } = form.value;
+
+    if (!value.email || !value.password || !value.repassword) {
+      return console.log('soomething is missing');
+    } if (value.password !== value.repassword) {
+      return console.log('passowrds do not match');
+      
+    } else {
+      try {
+        let email = value.email;
+        let password = value.password;
+        let newUser = { email: email, password: password };
+        console.log(newUser);
+
+        this.state.register(newUser);
+        this.router.navigate(['']);
+      } catch (error) {
+        console.log(error);
+
+      }
+      
+    }
+    console.log();
+
+  }
 }

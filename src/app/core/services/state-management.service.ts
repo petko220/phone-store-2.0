@@ -11,8 +11,7 @@ export class StateManagementService {
   user: User | undefined;
 
   get isLogged(): boolean {
-    console.log(this.user);
-    
+
     return !!this.user;
   }
 
@@ -33,14 +32,26 @@ export class StateManagementService {
     const headers = { 'content-type': 'application/json' };
     console.log(user);
     this.http.post<User>(`${appUrl}/users/login`, user, { headers }).subscribe(
-    data => {
-      this.user = data;
-      localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
-      
-    }
+      data => {
+        this.user = data;
+        localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+
+      }
     )
   }
 
+  register(user: object) {
+    const { appUrl } = environment;
+
+    const headers = { 'content-type': 'application/json' };
+    this.http.post<any>(`${appUrl}/users/register`, user, { headers }).subscribe(
+      data => {
+        this.user = data;
+        localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
+
+      }
+    )
+  }
   logout(): void {
     this.user = undefined;
     localStorage.removeItem(this.USER_KEY);

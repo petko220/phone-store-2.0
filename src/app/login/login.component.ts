@@ -26,7 +26,7 @@ export class LoginComponent {
       return console.log('email or password missing')
     } else {
       this.state.login(value)
-        //this.router.navigate(['/']);
+      this.router.navigate(['/']);
       
     }
   }

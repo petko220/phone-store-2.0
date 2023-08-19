@@ -1,7 +1,7 @@
 <main>
     <div class="register-box">
         <h2>Register</h2>
-        <form >
+        <form #form="ngForm" (ngSubmit)="register(form)">
             <div class="user-box">
                 <label>Username</label>
                 <input ngModel type="text" name="email" required="true">
