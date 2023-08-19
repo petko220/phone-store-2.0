@@ -5,7 +5,7 @@
         <a routerLink="catalog">Phone Selection</a>
         <a *ngIf="!isLoggedIn" routerLink ="login">Login</a>
         <a *ngIf="!isLoggedIn" routerLink="register">Register</a>
-        <a *ngIf="isLoggedIn">Add phone</a>
+        <a *ngIf="isLoggedIn" routerLink="create">Add phone</a>
         <a *ngIf="isLoggedIn" (click)="logout()" routerLink="logout">Logout</a>
         <a routerLink="about">About</a>
     </nav>

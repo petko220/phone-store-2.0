@@ -7,11 +7,13 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CurrentPhoneComponent } from './current-phone/current-phone.component';
 import { AuthGuard } from './core/guards/auth-guards';
+import { CreateComponent } from './create/create.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'create', component: CreateComponent},
   {
     path: 'catalog',
     children: [

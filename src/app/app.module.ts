@@ -11,6 +11,7 @@ import { CatalogComponent } from './catalog/catalog.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CurrentPhoneComponent } from './current-phone/current-phone.component';
+import { CreateComponent } from './create/create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CurrentPhoneComponent } from './current-phone/current-phone.component';
     CatalogComponent,
     LoginComponent,
     RegisterComponent,
-    CurrentPhoneComponent
+    CurrentPhoneComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
