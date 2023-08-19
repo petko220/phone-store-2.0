@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../core/services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/types/user';
+import { Phone } from 'src/types/phone';
 
 @Component({
   selector: 'app-current-phone',
@@ -10,10 +11,11 @@ import { User } from 'src/types/user';
 })
 export class CurrentPhoneComponent implements OnInit {
 
-  phones: any[] = [];
+  phones: Phone[] = [];
   currentUser: User | undefined;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private apiService: ApiService
   ) { }
@@ -28,18 +30,23 @@ export class CurrentPhoneComponent implements OnInit {
 
     this.apiService.getOne(phoneId).subscribe({
       next: (phone) => {
-        console.log(this.phones);
-        
-        this.phones.push(phone)
-        
-        console.log(this.phones);
-        
+          this.phones.push(phone)    
       },
       error: (err) => {
         console.log(err);
       }
     })
+  }
 
+  deletePhone() {
+    let phoneId = this.route.snapshot.params['phoneId'];
+    if (confirm("Are you certain you want to delete?") == true) {
+      this.apiService.deletePhone(phoneId);
+      this.router.navigate(['catalog']);
+    } else {
+
+    }
+    
   }
 
 }

@@ -32,7 +32,7 @@ export class ApiService {
      'X-Authorization': `${authorization}`
     };
 
-    this.http.post<any>(`${appUrl}/data/phones`, phone, { headers }).subscribe(
+    this.http.post<Phone>(`${appUrl}/data/phones`, phone, { headers }).subscribe(
       data => {
         console.log(data);
         
@@ -44,6 +44,19 @@ export class ApiService {
   getCurrentUser(): string {
     let user = (localStorage.getItem('[user]'));
     return String(user);
+  }
+
+  deletePhone(phoneId: string) {
+    let authorization = String(localStorage.getItem('[user]'));
+    authorization = JSON.parse(authorization).accessToken;
+    
+    const { appUrl } = environment;
+    const headers = {
+     'content-type': 'application/json',
+     'X-Authorization': `${authorization}`
+    };
+
+    this.http.delete(`${appUrl}/data/phones/${phoneId}`, { headers }).subscribe();
   }
 
 }

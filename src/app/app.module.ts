@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CurrentPhoneComponent } from './current-phone/current-phone.component';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CreateComponent } from './create/create.component';
     LoginComponent,
     RegisterComponent,
     CurrentPhoneComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

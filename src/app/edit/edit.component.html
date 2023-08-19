@@ -1,0 +1,38 @@
+<main>
+    <div class="edit-box">
+        <h2>Made a mistake? You can fix it right now!</h2>
+        <form #form="ngForm" (ngSubmit)="edit(form)">
+            <div class="user-box">
+                <label>Make</label>
+                <input ngModel type="text" name="make" required="true">
+            </div>
+            <div class="user-box">
+                <label>Model</label>
+                <input ngModel type="text" name="model" required>
+            </div>
+            <div class="user-box">
+                <label>Production year</label>
+                <input ngModel type="number" name="year" required>
+            </div>
+            <div class="user-box">
+                <label>Operating system</label>
+                <input ngModel type="text" name="OS" required>
+            </div>
+            <div class="user-box">
+                <label>Condition</label>
+                <input ngModel type="text" name="condition" required>
+            </div>
+            <div class="user-box">
+                <label>Price</label>
+                <input ngModel type="number" name="price" required>
+            </div>
+            <div class="user-box">
+                <label>Device Image</label>
+                <input ngModel type="url" name="imageUrl" required>
+            </div>
+            <button>Edit you phone now</button>
+        </form>
+    </div>
+</main>
+
+

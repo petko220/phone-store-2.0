@@ -6,4 +6,5 @@ export interface Phone {
     condition: string
     imageUrl: string
     OS: string
+    _ownerId: string
 }
