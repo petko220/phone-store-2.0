@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../core/services/api.service';
 import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/types/user';
 
 @Component({
   selector: 'app-current-phone',
@@ -10,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CurrentPhoneComponent implements OnInit {
 
   phones: any[] = [];
+  currentUser: User | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,6 +19,9 @@ export class CurrentPhoneComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.currentUser = <User>JSON.parse(this.apiService.getCurrentUser());
+    console.log(this.currentUser);
+    
 
     let phoneId = this.route.snapshot.params['phoneId']
     console.log(phoneId);

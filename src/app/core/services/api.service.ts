@@ -38,6 +38,12 @@ export class ApiService {
         
       }
     )
+
+  }
+
+  getCurrentUser(): string {
+    let user = (localStorage.getItem('[user]'));
+    return String(user);
   }
 
 }

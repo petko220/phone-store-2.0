@@ -9,8 +9,8 @@
             <p>Operating system: {{phone.OS}}</p>
             <p>price: {{phone.price}}</p>
         </div>
-        <div class="button-holder">
-            <a class="orange-button" href="">Edit</a>
+        <div *ngIf="!!currentUser && currentUser._id === phone._ownerId" class="button-holder">
+            <a  class="orange-button" href="">Edit</a>
             <a class="orange-button" href="">Delete</a>
         </div>
     </div>
