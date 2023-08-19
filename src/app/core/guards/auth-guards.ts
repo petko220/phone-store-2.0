@@ -4,7 +4,7 @@ import { Observable } from "rxjs";
 import { StateManagementService } from "../services/state-management.service";
 
 
-Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'root' })
 
 export class AuthGuard implements CanActivate {
 
