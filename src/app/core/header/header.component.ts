@@ -11,5 +11,5 @@ export class HeaderComponent {
     private stateManager: StateManagementService
   ) {}
 
-  state = this.stateManager.currentState;
+  
 }

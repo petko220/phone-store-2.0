@@ -15,7 +15,8 @@ export class LoginComponent {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private stateManager: StateManagementService,
+    private state: StateManagementService
+    
   ) { }
 
   login(form: NgForm): void {
@@ -24,11 +25,9 @@ export class LoginComponent {
     if (value.email === '' || value.password === '') {
       return console.log('email or password missing')
     } else {
-      this.apiService.login(value).subscribe(data => {
-        this.stateManager.currentState = data;
-        this.stateManager.showState()
+      this.state.login(value)
         //this.router.navigate(['/']);
-      });
+      
     }
   }
 }

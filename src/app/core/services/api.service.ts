@@ -22,12 +22,5 @@ export class ApiService {
     return this.http.get<any>(`${appUrl}/data/phones/${id}`);
   }
 
-  login(user: object) {
-    const { appUrl } = environment;
 
-    const headers = { 'content-type': 'application/json' };
-    console.log(user);
-    return this.http.post<any>(`${appUrl}/users/login`, user, { headers });
-    
-  }
 }
