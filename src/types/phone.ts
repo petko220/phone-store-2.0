@@ -7,4 +7,5 @@ export interface Phone {
     imageUrl: string
     OS: string
     _ownerId: string
+    _id: string
 }

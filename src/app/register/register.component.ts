@@ -31,7 +31,6 @@ export class RegisterComponent {
         console.log(newUser);
 
         this.state.register(newUser);
-        this.router.navigate(['']);
       } catch (error) {
         console.log(error);
 

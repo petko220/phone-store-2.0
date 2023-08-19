@@ -22,11 +22,7 @@ export class CurrentPhoneComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = <User>JSON.parse(this.apiService.getCurrentUser());
-    console.log(this.currentUser);
-    
-
     let phoneId = this.route.snapshot.params['phoneId']
-    console.log(phoneId);
 
     this.apiService.getOne(phoneId).subscribe({
       next: (phone) => {

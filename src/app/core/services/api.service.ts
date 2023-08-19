@@ -59,4 +59,17 @@ export class ApiService {
     this.http.delete(`${appUrl}/data/phones/${phoneId}`, { headers }).subscribe();
   }
 
+  editPhone(phoneId: string, phone: object) {
+    let authorization = String(localStorage.getItem('[user]'));
+    authorization = JSON.parse(authorization).accessToken;
+
+    const { appUrl } = environment;
+    const headers = {
+      'content-type': 'application/json',
+      'X-Authorization': `${authorization}`
+     };
+
+     this.http.put(`${appUrl}/data/phones/${phoneId}`,phone, {headers}).subscribe();
+  }
+
 }

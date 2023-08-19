@@ -17,7 +17,6 @@ export class CatalogComponent implements OnInit{
     this.apiService.getAll().subscribe({
       next: (phones) => {
         this.phones = phones;
-        console.log(phones, this.phones);
       },
 
       error: (error) => {

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { User } from 'src/types/user';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class StateManagementService {
   }
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) {
     try {
       const lsUser = localStorage.getItem(this.USER_KEY) || "";
@@ -31,12 +33,17 @@ export class StateManagementService {
 
     const headers = { 'content-type': 'application/json' };
     console.log(user);
+    
     this.http.post<User>(`${appUrl}/users/login`, user, { headers }).subscribe(
       data => {
         this.user = data;
         localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
-
+        this.router.navigate(['/']);
+      },
+      error => {
+        alert(error.error.message);
       }
+      
     )
   }
 
@@ -48,7 +55,10 @@ export class StateManagementService {
       data => {
         this.user = data;
         localStorage.setItem(this.USER_KEY, JSON.stringify(this.user));
-
+        this.router.navigate(['/']);
+      },
+      error => {
+        alert(error.error.message);
       }
     )
   }

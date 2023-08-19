@@ -10,7 +10,7 @@
             <p>price: {{phone.price}}</p>
         </div>
         <div *ngIf="!!currentUser && currentUser._id === phone._ownerId" class="button-holder">
-            <a  class="orange-button">Edit</a>
+            <a routerLink="/edit/{{phone._id}}" class="orange-button">Edit</a>
             <button (click)="deletePhone()" class="orange-button">Delete</button>
         </div>
     </div>
