@@ -11,6 +11,9 @@ import { Phone } from 'src/types/phone';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent {
+
+  message: string = '';
+
   constructor(
     private router: Router,
     private api: ApiService,
@@ -23,9 +26,11 @@ export class CreateComponent {
     
     let checker = this.validate.validatePhone(value);
     console.log(checker);
-    if(checker = 'OK') {
+    if(checker === 'OK') {
       this.api.create(value);
       this.router.navigate(['catalog']);
+    } else {
+      this.message = checker
     }
  
   }

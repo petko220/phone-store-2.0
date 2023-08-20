@@ -7,7 +7,7 @@
             <p>Year: {{phone.year}}</p>
             <p>Condition: {{phone.condition}}</p>
             <p>Operating system: {{phone.OS}}</p>
-            <p>price: {{phone.price}}</p>
+            <p>price: {{phone.price}}$</p>
         </div>
         <div *ngIf="!!currentUser && currentUser._id === phone._ownerId" class="button-holder">
             <a routerLink="/edit/{{phone._id}}" class="orange-button">Edit</a>
